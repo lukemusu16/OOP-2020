@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab65b3c60c650b14b9d20d7a03438296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileType:
+  Tile:
   - {fileID: 178147700612847897, guid: d72d0ecaa8f4e754f8a97344189d810c, type: 3}
   - {fileID: 1440414996984362301, guid: 5c1fe79bf1396034e9aa24bd93a6e5d6, type: 3}
   padding: 0

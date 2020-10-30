@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Task7 : MonoBehaviour
 {
-    public List<GameObject> TileType = new List<GameObject>();
-    public GameObject[,] squares = new GameObject[16, 16];
+    public List<GameObject> Tile = new List<GameObject>();
+
+    GameObject[,] grid = new GameObject[16,16];
 
     private float XMin, XMax, YMin, YMax;
     public float padding;
@@ -34,18 +36,21 @@ public class Task7 : MonoBehaviour
     {
         
 
-        for (int i = -8; i < 8; i+=2) {
-            for (int j = -8; j < 8; i+=2) {
+        for (int i = -8; i < grid.Length; i++) {
+            for (int j = -8; j < grid.Length; i++) {
 
-                Vector3 pos = new Vector3(i, j, 0);
+                Vector3 pos = new Vector3(i, j , 0);
 
                 if (i % 2 != 0 && j % 2 != 0 || i % 2 == 0 && j % 2 == 0)
                 {
-                    squares[i,j] = Instantiate(TileType[0], pos, Quaternion.identity);
-                    
+                    Debug.Log("This is being accessed");
+                    grid[i,j] = Instantiate(Tile[0], pos, Quaternion.identity);
                 }
-                else {
-                    squares[i,j] = Instantiate(TileType[1], pos, Quaternion.identity);
+
+                if (i % 2 > 0 && j % 2 == 0 || i % 2 == 0 && j % 2 > 0)
+                {
+                    Debug.Log("This is being accessed");
+                    grid[i,j] = Instantiate(Tile[1], pos, Quaternion.identity);
                 }
             }
         }
