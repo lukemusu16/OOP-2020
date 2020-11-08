@@ -4,11 +4,15 @@ public class PlayerInput : MonoBehaviour
 {
     Enemy bob, alice; // declare bob and alice
     int playerHP = 10; //This is our hp
+    private GameObject enemyPrefab;
     void Start()
     {
-        bob = new Enemy(5, 2, "Bob");
+        enemyPrefab = Resources.Load("Diamond") as GameObject;
+        bob = new Enemy(5, 2, "Bob", enemyPrefab);
         //Bob has 5 hp, 2 damage, and a name of Bob
-        alice = new Enemy(2, 5, "Alice");
+
+        enemyPrefab = Resources.Load("Polygon") as GameObject;
+        alice = new Enemy(2, 5, "Alice", enemyPrefab);
         //Alice has 2 hp, 5 damage, and a name of Alice
     }
     void Update()
